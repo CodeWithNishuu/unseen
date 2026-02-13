@@ -21,12 +21,8 @@ export default function App() {
   const connectToSocket = () => {
     if (!name.trim()) return;
 
-    // Explicitly connect to backend port 3001 for local dev
-    const newSocket = io('http://localhost:3001', {
-      transports: ['polling', 'websocket'], // Allow upgrade for reliability
-      reconnectionAttempts: 5,
-      autoConnect: true
-    });
+    // Same-origin connection for monolithic deployment
+    const newSocket = io();
     setSocket(newSocket);
     setView('SEARCHING');
 
