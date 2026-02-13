@@ -164,25 +164,25 @@ export default function App() {
   return (
     <div className="flex flex-col h-screen bg-zinc-950 overflow-hidden">
       {/* Header */}
-      <header className="flex-none h-16 border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md flex items-center justify-between px-4 sm:px-6 relative z-10">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-violet-600/20 rounded-xl flex items-center justify-center text-violet-400">
-            <Radio className="w-5 h-5" />
+      <header className="flex-none min-h-16 h-auto border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md flex items-center justify-between px-4 py-2 sm:px-6 relative z-10">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 bg-violet-600/20 rounded-xl flex items-center justify-center text-violet-400">
+            <Radio className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
-          <div className="leading-tight">
-            <h1 className="font-bold text-white tracking-tight">unseen</h1>
+          <div className="leading-tight min-w-0">
+            <h1 className="font-bold text-white tracking-tight text-sm sm:text-base">unseen</h1>
             <div className="flex items-center gap-1.5">
-              <span className={`w-2 h-2 rounded-full ${partnerActive ? 'bg-emerald-500' : 'bg-red-500'}`}></span>
-              <span className="text-xs text-zinc-400 font-medium">
+              <span className={`w-2 h-2 shrink-0 rounded-full ${partnerActive ? 'bg-emerald-500' : 'bg-red-500'}`}></span>
+              <span className="text-[11px] sm:text-xs text-zinc-400 font-medium truncate">
                 {partnerActive ? 'Connected to a stranger' : 'Stranger disconnected'}
               </span>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center shrink-0 ml-2">
           <button
             onClick={handleEndChat}
-            className="hidden sm:flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            className="flex items-center gap-1 sm:gap-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap"
           >
             End Chat
           </button>
